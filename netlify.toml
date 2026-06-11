@@ -1,0 +1,6 @@
+# Configuración de Netlify para la landing de Gestian.
+# Habilita la función serverless que conecta el formulario con MailerLite.
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

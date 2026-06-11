@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.className+=' js';</script>
+<title>Software de gestión de obra para desarrolladores y constructoras | Gestian</title>
+<link rel="preload" as="image" href="assets/dashboard.webp" type="image/webp" fetchpriority="high">
+
+<!-- ============== Google Analytics 4 (gtag.js) ==============
+     PARA FRANCISCO: reemplazá G-0VHN2HTG2N por tu Measurement ID de GA4.
+     (Aparece 2 veces acá abajo — cambialo en las dos.) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VHN2HTG2N"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0VHN2HTG2N');
+</script>
+<!-- ========================================================== -->
+
+<!-- ================= Meta Pixel (Facebook) =================
+     PARA FRANCISCO: reemplazá TU_PIXEL_ID_AQUI por tu ID de Pixel.
+     (Aparece 3 veces acá abajo — cambialo en las tres.) -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', 'TU_PIXEL_ID_AQUI');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=TU_PIXEL_ID_AQUI&ev=PageView&noscript=1"/></noscript>
+<!-- ========================================================= -->
+
+<meta name="description" content="Gestian es el software de gestión de obra para desarrolladores y constructoras: cargá los gastos sacándole una foto a la factura (la IA la lee sola) y seguí el avance, las unidades y los cobros de cada obra en una sola pantalla. Sacá tu obra del Excel y el WhatsApp. Probalo gratis 14 días, sin tarjeta.">
+<meta name="keywords" content="software de gestión de obra, software para constructoras, software para desarrolladoras inmobiliarias, carga de facturas con IA, gestión de gastos de obra, control de obra, gestión de obra Argentina, sistema para desarrolladores inmobiliarios, gestión de obra sin Excel">
+<meta name="author" content="Gestian">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0c0820">
+<link rel="canonical" href="https://gestian.com.ar/">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+<!-- Open Graph (WhatsApp / Facebook / LinkedIn) -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Gestian">
+<meta property="og:url" content="https://gestian.com.ar/">
+<meta property="og:title" content="Gestian · Software de gestión de obra — toda tu obra en una pantalla">
+<meta property="og:description" content="Para desarrolladores y constructoras: cargá los gastos con una foto (la IA lee la factura), y seguí avance, unidades y cobros en una pantalla. Sacá tu obra del Excel y el WhatsApp. 14 días gratis.">
+<meta property="og:image" content="https://gestian.com.ar/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gestian · Software de gestión de obra — toda tu obra en una pantalla">
+<meta name="twitter:description" content="Para desarrolladores y constructoras: finanzas, obra y ventas en una pantalla. 14 días gratis.">
+<meta name="twitter:image" content="https://gestian.com.ar/assets/og-image.png">
+
+<!-- Datos estructurados para Google (rich results) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Gestian",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "url": "https://gestian.com.ar/",
+  "description": "Software de gestión de obra para desarrolladores y constructoras: cargá los gastos sacándole una foto a la factura (lectura con IA), y seguí el avance real, las unidades y los cobros de cada obra en una sola pantalla.",
+  "inLanguage": "es-AR",
+  "areaServed": "AR",
+  "offers": { "@type": "Offer", "category": "SaaS", "availability": "https://schema.org/InStock" },
+  "featureList": "Carga de gastos con lectura de facturas por IA, registro de gastos buscable, avance real de obra, mapa de unidades y ventas, gestión de cobros, multi-obra, exportación a PDF y Excel",
+  "publisher": { "@type": "Organization", "name": "Gestian", "url": "https://gestian.com.ar/" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Gestian",
+  "url": "https://gestian.com.ar/",
+  "logo": "https://gestian.com.ar/assets/logo.png",
+  "description": "Software de gestión de obra para desarrolladores y constructoras en Argentina.",
+  "areaServed": { "@type": "Country", "name": "Argentina" },
+  "slogan": "El centro de comando de tu obra"
+}
+</script>
+
+<!-- ============================================================
+   PARA FRANCISCO — reemplazá estos placeholders y listo:
+   EN EL <head> (arriba de todo):
+     · G-0VHN2HTG2N     → tu Measurement ID de Google Analytics 4 (aparece 2 veces)
+     · TU_PIXEL_ID_AQUI → tu ID de Meta Pixel (aparece 3 veces)
+   EN EL <script> de CONFIG (abajo):
+     · CAL_USERNAME  → tu usuario de Cal.com (ej. "gestian/demo")
+     · FORM_ENDPOINT → endpoint de Formspree/tu form (ej. "https://formspree.io/f/xxxxx")
+   OTROS:
+     · Redes/contacto → IG, WhatsApp y email (buscá "REEMPLAZAR" en el HTML)
+     · Subí esta carpeta (index.html + /assets) a tu hosting (Netlify, Vercel, Hostinger, etc.)
+   Guía paso a paso (de dónde saco cada ID): ver LEEME_landing.md en esta carpeta.
+   ============================================================ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Instrument+Sans:ital,wght@0,400;0,600;1,400&family=Geist+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0916; --bg2:#090a10; --panel:#140c2a; --v3:#3C0786; --v5:#7C3AED; --v6:#A78BFA;
+  --gold:#F59E0B; --gold2:#FCBA39; --green:#34D399; --sky:#60A5FA; --terra:#E07B77;
+  --text:#E7EBFA; --muted:#9aa0c4; --line:rgba(167,139,250,.18);
+  --head:'Outfit',sans-serif; --body:'Instrument Sans',sans-serif; --mono:'Geist Mono',monospace;
+  --maxw:1300px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body); color:var(--text); background:var(--bg); line-height:1.6;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block;height:auto}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+section{position:relative;scroll-margin-top:84px}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:1.08;letter-spacing:-.02em}
+.gold{color:var(--gold2)}
+.kicker{font-family:var(--mono);font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold2);font-weight:700}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:var(--head);font-weight:700;font-size:16px;
+  padding:15px 26px;border-radius:999px;cursor:pointer;border:none;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.btn-gold{background:var(--gold);color:#1a0f02;box-shadow:0 3px 10px rgba(0,0,0,.22)}
+.btn-gold:hover{transform:translateY(-1px);background:var(--gold2);box-shadow:0 5px 14px rgba(0,0,0,.28)}
+.btn-white{background:var(--gold);color:#ffffff;box-shadow:0 3px 10px rgba(0,0,0,.22)}
+.btn-white:hover{transform:translateY(-1px);background:var(--gold2);box-shadow:0 5px 14px rgba(0,0,0,.28)}
+.btn-ghost{background:rgba(167,139,250,.08);color:var(--text);border:1px solid var(--line)}
+.btn-ghost:hover{background:rgba(167,139,250,.16)}
+
+/* blueprint backdrop */
+.bp{position:absolute;inset:0;pointer-events:none;z-index:0;
+  background-image:linear-gradient(rgba(245,158,11,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(245,158,11,.5) 1px,transparent 1px);
+  background-size:48px 48px;opacity:.05;}
+
+/* NAV */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);
+  background:rgba(11,9,22,.78);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:center;gap:12px;font-family:var(--head);font-weight:800;font-size:22px;letter-spacing:.02em}
+.brand img{height:34px;width:auto}
+.nav-links{display:flex;align-items:center;gap:30px}
+.nav-links a:not(.btn){color:var(--muted);font-size:15px;font-weight:600}
+.nav-links a:not(.btn):hover{color:var(--text)}
+@media(max-width:820px){.nav-links a:not(.btn){display:none}}
+
+/* HERO */
+.hero{background:
+   radial-gradient(1100px 560px at 18% -10%, rgba(124,58,237,.34), transparent 60%),
+   radial-gradient(800px 460px at 110% 8%, rgba(245,158,11,.10), transparent 55%),
+   linear-gradient(180deg,#0e0a22, var(--bg));
+  padding:84px 0 70px;overflow:hidden}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(38px,6vw,68px);max-width:14ch}
+.hero p.sub{font-size:clamp(17px,2.4vw,21px);color:var(--muted);max-width:54ch;margin:22px 0 32px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero-note{margin-top:18px;font-size:14px;color:var(--muted)}
+.hero-note b{color:var(--gold2)}
+/* browser mock */
+.mock{margin-top:54px;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 40px 90px rgba(8,4,24,.7);background:#0a0618;position:relative;z-index:1}
+.mock-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#181030;border-bottom:1px solid var(--line)}
+.mock-bar i{width:11px;height:11px;border-radius:50%;display:inline-block}
+.mock-url{margin-left:14px;font-family:var(--mono);font-size:13px;color:var(--muted);
+  background:#0a0618;padding:5px 14px;border-radius:8px}
+.mock img{width:100%;display:block}
+
+/* generic section spacing */
+.s{padding:78px 0}
+.s h2{font-size:clamp(28px,4vw,44px)}
+.lead{color:var(--muted);font-size:18px;max-width:62ch;margin-top:14px}
+.center{text-align:center;margin:0 auto}
+
+/* PROBLEM */
+.problem{background:linear-gradient(180deg,var(--bg),#0a0814)}
+.pain-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-top:40px}
+.pain{background:rgba(224,123,119,.06);border:1px solid rgba(224,123,119,.22);border-radius:14px;padding:22px}
+.pain .x{color:var(--terra);font-family:var(--mono);font-weight:700;font-size:14px}
+.pain p{margin-top:8px;font-size:16px;color:#d8d2e2}
+
+/* FEATURES */
+.feat{display:flex;gap:48px;align-items:center;margin:46px 0;flex-wrap:wrap}
+.feat:nth-child(even){flex-direction:row-reverse}
+.feat-txt{flex:1 1 320px}
+.feat-img{flex:1 1 420px;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 24px 60px rgba(8,4,24,.55);background:#0a0618}
+.feat-img img{width:100%}
+.feat .tag{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+  color:#0b0712;background:var(--gold2);padding:5px 12px;border-radius:999px;font-weight:700}
+.feat h3{font-size:27px;margin:16px 0 10px}
+.feat p{color:var(--muted);font-size:17px}
+
+/* DIFERENCIALES */
+.diff{background:linear-gradient(180deg,#0a0814,#0c0a1a)}
+.diff-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:42px}
+.dcard{background:rgba(124,58,237,.08);border:1px solid var(--line);border-radius:16px;padding:26px}
+.dcard .n{font-family:var(--mono);color:var(--gold2);font-weight:700}
+.dcard h3{font-size:21px;margin:12px 0 8px}
+.dcard p{color:var(--muted);font-size:15.5px}
+
+/* LEAD MAGNET */
+.magnet{background:
+  radial-gradient(700px 360px at 80% 20%, rgba(245,158,11,.12), transparent 60%),#0b0916}
+.magnet-box{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;
+  background:linear-gradient(160deg,rgba(60,7,134,.4),rgba(13,9,30,.6));
+  border:1px solid var(--line);border-radius:22px;padding:44px}
+@media(max-width:760px){.magnet-box{grid-template-columns:1fr;padding:30px}}
+.magnet h2{font-size:clamp(26px,3.5vw,36px)}
+.magnet .lead{margin:14px 0 22px}
+.lm-form{display:flex;gap:10px;flex-wrap:wrap}
+.lm-form input{flex:1 1 220px;padding:15px 18px;border-radius:12px;border:1px solid var(--line);
+  background:#0a0618;color:var(--text);font-family:var(--body);font-size:16px}
+.lm-form input:focus{outline:none;border-color:var(--gold)}
+.lm-msg{margin-top:12px;font-size:14px;color:var(--green);min-height:20px}
+.lm-cover{border-radius:14px;overflow:hidden;border:1px solid var(--line);transform:rotate(2deg);box-shadow:0 24px 60px rgba(8,4,24,.6)}
+
+/* TESTIMONIALS */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:42px}
+.tcard{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:16px;padding:26px}
+.tcard p{font-size:17px;color:#dfe3f3}
+.tcard .who{margin-top:18px;display:flex;align-items:center;gap:12px}
+.tcard .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--v5),var(--gold))}
+.tcard .who b{font-family:var(--head)}
+.tcard .who span{display:block;font-size:13px;color:var(--muted)}
+.ph{font-family:var(--mono);font-size:11px;color:var(--gold2);letter-spacing:.1em;border:1px dashed rgba(245,158,11,.4);padding:2px 8px;border-radius:6px;display:inline-block;margin-bottom:14px}
+
+/* FINAL CTA */
+.final{background:
+  radial-gradient(800px 420px at 50% 0%, rgba(124,58,237,.3), transparent 60%),#0a0814;text-align:center}
+.cal-box{margin:36px auto 0;max-width:820px;background:#0a0618;border:1px solid var(--line);border-radius:18px;
+  padding:10px;min-height:120px}
+#cal-inline{width:100%;min-height:560px;border-radius:12px;overflow:hidden}
+.cal-fallback{padding:34px;text-align:center}
+.cal-fallback p{color:var(--muted);margin-bottom:18px}
+
+/* FOOTER */
+footer{border-top:1px solid var(--line);padding:42px 0;background:var(--bg2)}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot .brand{font-size:20px}
+.foot a{color:var(--muted);font-size:14px;margin-left:18px}
+.foot a:hover{color:var(--gold2)}
+.foot small{color:#5b5b73;font-size:12.5px}
+
+/* ===== ACCESIBILIDAD ===== */
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--gold);color:#1a0f02;
+  padding:10px 18px;border-radius:0 0 10px 0;font-family:var(--head);font-weight:700}
+.skip:focus{left:0}
+
+/* ===== TRUST STRIP (debajo del hero) ===== */
+.trust{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;align-items:center}
+.trust span{display:inline-flex;align-items:center;gap:8px;font-size:14px;color:var(--muted);font-weight:600}
+.trust svg{flex:none}
+.trust b{color:var(--text);font-weight:700}
+
+/* ===== EARLY ADOPTER badge ===== */
+.ea{display:inline-flex;align-items:center;gap:9px;background:rgba(52,211,153,.1);
+  border:1px solid rgba(52,211,153,.35);color:var(--green);font-family:var(--mono);font-weight:700;
+  font-size:12.5px;letter-spacing:.08em;padding:7px 14px;border-radius:999px;margin-bottom:20px}
+.ea .dot{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(52,211,153,.6);
+  animation:pulse 2.2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(52,211,153,.55)}70%{box-shadow:0 0 0 9px rgba(52,211,153,0)}100%{box-shadow:0 0 0 0 rgba(52,211,153,0)}}
+
+/* ===== GARANTÍAS / cómo es arrancar (reemplaza testimonios) ===== */
+.guar-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px;margin-top:42px}
+.gcard{background:rgba(255,255,255,.025);border:1px solid var(--line);border-radius:16px;padding:26px;transition:border-color .2s,transform .2s}
+.gcard:hover{border-color:rgba(245,158,11,.4);transform:translateY(-3px)}
+.gcard .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;
+  background:rgba(245,158,11,.12);margin-bottom:16px}
+.gcard h3{font-size:19px;margin-bottom:8px}
+.gcard p{color:var(--muted);font-size:15.5px}
+
+/* ===== microcopy bajo el form ===== */
+.form-note{margin-top:10px;font-size:13px;color:#7e83a6;display:flex;align-items:center;gap:7px}
+
+/* ===== STICKY CTA mobile ===== */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:60;display:none;gap:12px;align-items:center;
+  justify-content:space-between;padding:12px 18px;background:rgba(11,9,22,.92);backdrop-filter:blur(12px);
+  border-top:1px solid var(--line)}
+.sticky-cta span{font-family:var(--head);font-weight:700;font-size:14px;color:var(--text)}
+.sticky-cta .btn{padding:12px 20px;font-size:15px}
+@media(max-width:760px){.sticky-cta{display:flex}body{padding-bottom:72px}}
+
+/* ===== REVEAL on scroll (oculto solo si hay JS, para no romper sin JS) ===== */
+.reveal{transition:opacity .6s ease,transform .6s ease}
+.js .reveal{opacity:0;transform:translateY(22px)}
+.js .reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+  .ea .dot{animation:none}
+}
+
+/* ===== HERO SKYLINE ANIMADO (con grúa) ===== */
+.hero{position:relative}
+.hero-sky{position:absolute;top:0;left:0;width:100%;aspect-ratio:680/400;z-index:0;pointer-events:none;opacity:.95;
+  -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 68%,transparent 92%);
+  mask-image:linear-gradient(to bottom,#000 0,#000 68%,transparent 92%)}
+.hero-sky svg{width:100%;height:100%;display:block}
+.hero-sky::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(11,9,22,.9) 0%,rgba(11,9,22,.68) 36%,rgba(11,9,22,.32) 56%,rgba(11,9,22,.08) 72%,transparent 82%)}
+.hero p.sub,.hero .hero-note,.hero .trust span{color:#cdd2ef;text-shadow:0 1px 12px rgba(6,4,18,.7)}
+@media(max-width:760px){
+  .hero-sky{opacity:.5}
+  .hero-sky::after{background:linear-gradient(180deg,rgba(11,9,22,.38) 0%,rgba(11,9,22,.6) 70%)}
+}
+.hero h1{text-shadow:0 2px 22px rgba(6,4,18,.6)}
+.crane line,.crane polyline{stroke:var(--gold2);stroke-width:1.3;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+.sk-far{animation:sksway 26s ease-in-out infinite}
+.sk-mid{animation:sksway 18s ease-in-out infinite reverse}
+.sk-trolley{animation:sktrolley 13s ease-in-out infinite}
+.sk-load{animation:skload 4.5s ease-in-out infinite}
+.sk-cranelight{animation:skblink 1.6s step-end infinite}
+@keyframes sktrolley{0%,100%{transform:translateX(4px)}50%{transform:translateX(-56px)}}
+@keyframes skload{0%,100%{transform:translateX(-3px)}50%{transform:translateX(3px)}}
+@keyframes sksway{0%,100%{transform:translateX(0)}50%{transform:translateX(10px)}}
+@keyframes skwin{0%,100%{opacity:var(--o)}50%{opacity:calc(var(--o) * .25)}}
+@keyframes skstar{0%,100%{opacity:.75}50%{opacity:.12}}
+@keyframes skblink{0%,45%{opacity:1}55%,100%{opacity:.15}}
+@media(prefers-reduced-motion:reduce){.sk-far,.sk-mid,.sk-trolley,.sk-load,.hero-sky *{animation:none!important}}
+
+/* ===== FONDO GLOBAL ANIMADO (toda la página) ===== */
+.site-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.site-grid{position:absolute;inset:-60px;
+  background-image:linear-gradient(rgba(245,158,11,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(245,158,11,.5) 1px,transparent 1px);
+  background-size:54px 54px;opacity:.04;animation:siteDrift 16s linear infinite}
+.site-glow{position:absolute;border-radius:50%}
+.glow-a{width:520px;height:520px;background:radial-gradient(circle,rgba(124,58,237,.42),transparent 62%);top:5%;left:-8%;animation:floatA 28s ease-in-out infinite}
+.glow-b{width:440px;height:440px;background:radial-gradient(circle,rgba(245,158,11,.20),transparent 62%);bottom:4%;right:-6%;animation:floatB 32s ease-in-out infinite}
+.glow-c{width:380px;height:380px;background:radial-gradient(circle,rgba(124,58,237,.26),transparent 62%);top:48%;right:16%;animation:floatA 37s ease-in-out infinite}
+.site-dot{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold2);opacity:0;animation:siteRise linear infinite}
+@keyframes siteDrift{to{transform:translate(54px,54px)}}
+@keyframes floatA{0%,100%{transform:translate(0,0)}50%{transform:translate(70px,36px)}}
+@keyframes floatB{0%,100%{transform:translate(0,0)}50%{transform:translate(-64px,-28px)}}
+@keyframes siteRise{0%{transform:translateY(30px);opacity:0}12%{opacity:.5}100%{transform:translateY(-150px);opacity:0}}
+.problem,.diff{background:transparent}
+.magnet{background:radial-gradient(700px 360px at 80% 20%, rgba(245,158,11,.10), transparent 60%)}
+.final{background:radial-gradient(800px 420px at 50% 0%, rgba(124,58,237,.24), transparent 60%)}
+@media(prefers-reduced-motion:reduce){.site-grid,.site-glow,.site-dot{animation:none!important}}
+
+/* ===== OBRA QUE SE CONSTRUYE AL SCROLLEAR (fondo) ===== */
+.build-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;pointer-events:none}
+.build-bg svg{position:absolute;inset:0;width:100%;height:100%}
+.bz-cl{stroke:#F4B53A;stroke-width:1.1;fill:none;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
+.bz-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(11,9,22,.74) 0%,rgba(11,9,22,.38) 40%,rgba(11,9,22,.08) 62%,transparent 74%)}
+.bz-prog{position:fixed;right:18px;bottom:15px;z-index:1;font-family:var(--mono);font-size:12px;letter-spacing:.1em;color:var(--gold2);opacity:0;transition:opacity .4s;pointer-events:none}
+.bz-prog.show{opacity:.7}
+.bz-blink{animation:bzblink 1.4s step-end infinite}
+@keyframes bzblink{0%,45%{opacity:1}55%,100%{opacity:.15}}
+@media(max-width:760px){.bz-prog{display:none}}
+@media(prefers-reduced-motion:reduce){.bz-blink{animation:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#top">Saltar al contenido</a>
+
+<!-- Fondo global animado -->
+<div class="site-bg" aria-hidden="true">
+  <div class="site-grid"></div>
+  <div class="site-glow glow-a"></div>
+  <div class="site-glow glow-b"></div>
+</div>
+<div class="build-bg" aria-hidden="true">
+  <svg viewBox="0 0 700 820" preserveAspectRatio="xMaxYMax meet">
+    <g id="bzGhost" transform="translate(0,52)"></g>
+    <line id="bzGround" x1="150" y1="792" x2="700" y2="792" stroke="#6b5fa0" stroke-width="1.2" opacity=".4"/>
+    <g id="bzBuild" transform="translate(0,52)"></g>
+    <g id="bzCrane" transform="translate(0,52)"></g>
+  </svg>
+  <div class="bz-veil"></div>
+</div>
+<div class="bz-prog" id="bzProg">Obra 0%</div>
+
+<!-- NAV -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><img src="assets/logo.png" alt="Gestian — software de gestión de obra" width="34" height="28">Gestian</a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#producto">Cómo funciona</a>
+      <a href="#precios">Precio</a>
+      <a href="#faq">Preguntas</a>
+      <a class="btn btn-white" href="https://app.gestian.com.ar" target="_blank" rel="noopener">Probar gratis</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-sky" aria-hidden="true">
+    <svg viewBox="0 0 680 400" preserveAspectRatio="xMidYMid meet">
+      <g id="hero-stars"></g>
+      <g id="hero-far" class="sk-far"></g>
+      <g id="hero-mid" class="sk-mid"></g>
+      <g id="hero-front"></g>
+      <g class="crane" id="hero-crane"></g>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="ea"><span class="dot"></span>Acceso anticipado · sumando las primeras obras</div>
+    <div class="kicker">El centro de comando de tu obra</div>
+    <h1>Toda tu obra, <span class="gold">ordenada en una pantalla.</span></h1>
+    <p class="sub">Gestian junta los gastos, el avance, las unidades y los cobros de cada obra en un solo lugar. Para desarrolladores y constructoras que hoy manejan todo entre Excel, papelitos y mil mensajes de WhatsApp.</p>
+    <div class="hero-cta">
+      <a class="btn btn-gold" href="https://app.gestian.com.ar" target="_blank" rel="noopener">Probar gratis 14 días →</a>
+      <a class="btn btn-ghost" href="#producto">Ver cómo funciona</a>
+    </div>
+    <p class="hero-note">Cargás un gasto <b>sacándole una foto</b> a la factura y la IA la lee sola: proveedor, monto, rubro y fecha. <b>Cero tipeo.</b> ¿Preferís que te lo mostremos? <a href="#demo" style="color:var(--gold2)">Agendá una demo de 15 min</a>.</p>
+
+    <div class="trust" aria-label="Por qué confiar en Gestian">
+      <span>✓ <b>App web</b> · sin instalar nada</span>
+      <span>✓ <b>14 días gratis</b> · sin tarjeta</span>
+      <span>✓ Tus datos, <b>exportables siempre</b></span>
+      <span>✓ Hecho en <b>Argentina</b></span>
+    </div>
+
+    <div class="mock">
+      <picture>
+        <source srcset="assets/dashboard.webp" type="image/webp">
+        <img src="assets/dashboard.png" width="1600" height="1222" fetchpriority="high" decoding="async"
+             alt="Dashboard de Gestian: gastos, avance real, unidades y cobros de la obra en una sola pantalla">
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="s problem" id="problema">
+  <div class="bp"></div>
+  <div class="wrap">
+    <div class="kicker">El problema</div>
+    <h2 style="margin-top:14px;max-width:18ch">Hoy tu obra vive en <span class="gold">mil pedazos.</span></h2>
+    <p class="lead">Fotos de facturas perdidas en WhatsApp, un Excel que envejece, cuentas en una servilleta. Y la pregunta de siempre: ¿cuánto va gastado en la obra, hoy?</p>
+    <div class="pain-grid">
+      <div class="pain reveal"><span class="x">✕ 01</span><p>Las facturas viven en fotos de WhatsApp que nadie cargó.</p></div>
+      <div class="pain reveal"><span class="x">✕ 02</span><p>Para saber cuánto va gastado tenés que abrir 4 Excels.</p></div>
+      <div class="pain reveal"><span class="x">✕ 03</span><p>El avance "real" de la obra siempre es una sorpresa.</p></div>
+      <div class="pain reveal"><span class="x">✕ 04</span><p>Cobros vencidos que se te pasaron sin darte cuenta.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="s" id="producto">
+  <div class="wrap">
+    <div class="center" style="max-width:60ch">
+      <div class="kicker">Cómo funciona</div>
+      <h2 style="margin-top:14px">Todo lo de tu obra, en un solo comando.</h2>
+      <p class="lead center">Lo que cargás se calcula solo. Cero planillas que envejecen.</p>
+    </div>
+
+    <div class="feat reveal">
+      <div class="feat-txt">
+        <span class="tag">Facturas con IA</span>
+        <h3>Cargá un gasto sacándole una foto.</h3>
+        <p>Le sacás una foto a la factura o al comprobante y la IA detecta proveedor, monto, rubro y fecha. El gasto queda cargado en segundos — buscable, filtrable y descargable. Cero tipeo, cero factura traspapelada.</p>
+      </div>
+      <div class="feat-img"><picture><source srcset="assets/gastos.webp" type="image/webp"><img src="assets/gastos.png" width="1300" height="624" loading="lazy" decoding="async" alt="Registro de gastos de obra con lectura de facturas por IA, cargados con una foto"></picture></div>
+    </div>
+
+    <div class="feat reveal">
+      <div class="feat-txt">
+        <span class="tag">Ventas y unidades</span>
+        <h3>Tu edificio, piso por piso.</h3>
+        <p>Mapa de unidades vendidas y disponibles, con comprador, precio, m² y precio por m². Las ventas y la obra, en el mismo lugar.</p>
+      </div>
+      <div class="feat-img"><picture><source srcset="assets/unidades.webp" type="image/webp"><img src="assets/unidades.png" width="1300" height="689" loading="lazy" decoding="async" alt="Mapa de unidades del edificio: vendidas y disponibles, con comprador, precio y m²"></picture></div>
+    </div>
+
+    <div class="feat reveal">
+      <div class="feat-txt">
+        <span class="tag">Cobros</span>
+        <h3>Quién te debe, cuánto y cuándo.</h3>
+        <p>Cada cliente, su unidad, su vencimiento, lo pagado y lo que resta. Cuotas y pagos parciales, claros. Cobrás con la información delante, no de memoria.</p>
+      </div>
+      <div class="feat-img"><picture><source srcset="assets/cobros.webp" type="image/webp"><img src="assets/cobros.png" width="1300" height="547" loading="lazy" decoding="async" alt="Gestión de cobros de unidades: cuotas, pagos parciales y estado por cliente"></picture></div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIALES -->
+<section class="s diff">
+  <div class="bp"></div>
+  <div class="wrap">
+    <div class="kicker">Por qué Gestian</div>
+    <h2 style="margin-top:14px">Pensado para cómo se construye en Argentina.</h2>
+    <div class="diff-grid">
+      <div class="dcard reveal"><div class="n">01</div><h3>Todo en un lugar</h3><p>Gastos, avance, unidades y cobros en una pantalla. Se terminó saltar entre el Excel, el WhatsApp y los papelitos.</p></div>
+      <div class="dcard reveal"><div class="n">02</div><h3>Avance real</h3><p>Sale del cronograma: actividades completadas ponderadas por su duración. Si no se completa nada, no se mueve.</p></div>
+      <div class="dcard reveal"><div class="n">03</div><h3>Multi-obra</h3><p>Varias obras, cada una con su propio tablero. Saltás de una a otra sin perder el hilo.</p></div>
+      <div class="dcard reveal"><div class="n">04</div><h3>Reportes que exportás</h3><p>El cronograma con las tareas atrasadas, la planilla de gastos y los comprobantes — a PDF o Excel con un clic. Tus datos, siempre tuyos.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET -->
+<section class="s magnet" id="checklist">
+  <div class="wrap">
+    <div class="magnet-box">
+      <div>
+        <div class="kicker">Guía gratuita</div>
+        <h2>Checklist: ¿tu obra está bajo control o a las corridas?</h2>
+        <p class="lead">24 preguntas para detectar el desorden que hoy te está costando tiempo y plata en tus obras — y cómo ordenarlo. Dejanos tu email y te lo enviamos al instante.</p>
+        <form class="lm-form" id="lmForm">
+          <label for="lmEmail" class="sr-only" style="position:absolute;left:-9999px">Tu email</label>
+          <input type="email" id="lmEmail" placeholder="tu@email.com" autocomplete="email" required aria-label="Tu email">
+          <button class="btn btn-gold" type="submit">Enviármelo al mail</button>
+        </form>
+        <div class="lm-msg" id="lmMsg" role="status" aria-live="polite"></div>
+        <p class="form-note">🔒 Sin spam. Te llega al instante. Te podés dar de baja cuando quieras.</p>
+      </div>
+      <div class="lm-cover">
+        <picture><source srcset="assets/checklist_cover.webp" type="image/webp"><img src="assets/checklist_cover.png" width="1240" height="1754" loading="lazy" decoding="async" alt="Portada del checklist gratuito de Gestian para poner tu obra en orden" onerror="this.closest('.lm-cover').style.display='none'"></picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CÓMO ES ARRANCAR / GARANTÍAS (risk reversal honesto) -->
+<section class="s">
+  <div class="wrap">
+    <div class="center" style="max-width:60ch">
+      <div class="kicker">Arrancar es fácil</div>
+      <h2 style="margin-top:14px">Probarlo no tiene riesgo.</h2>
+      <p class="lead center">Estamos sumando las primeras obras del programa de acceso anticipado. Lo ves funcionando antes de decidir nada.</p>
+    </div>
+    <div class="guar-grid">
+      <div class="gcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCBA39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Demo de 15 minutos</h3>
+        <p>Te lo mostramos con una obra real, sin vueltas ni presentaciones eternas. Vos preguntás, nosotros mostramos.</p>
+      </div>
+      <div class="gcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCBA39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h18M3 12h18M3 17h12"/></svg></div>
+        <h3>Migramos tu Excel con vos</h3>
+        <p>No empezás de cero. Te ayudamos a pasar los datos de tu obra para que arranques con todo cargado.</p>
+      </div>
+      <div class="gcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCBA39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></div>
+        <h3>Sin tarjeta, sin permanencia</h3>
+        <p>Para verlo y probarlo no te pedimos datos de pago. Si no te suma, no seguís. Así de simple.</p>
+      </div>
+      <div class="gcard reveal">
+        <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FCBA39" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Atención directa del equipo</h3>
+        <p>Hablás con quien construye Gestian, no con un call center. Tu feedback cambia el producto de verdad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<style>
+.price-card{max-width:560px;margin:38px auto 0;border:1px solid var(--line);border-radius:20px;
+  background:linear-gradient(180deg,rgba(124,58,237,.10),rgba(255,255,255,.02));padding:36px 34px;text-align:center}
+.price-num{font-family:var(--head);font-weight:800;font-size:52px;color:var(--text);line-height:1}
+.price-num small{font-size:18px;font-weight:600;color:var(--muted)}
+.price-extra{margin-top:10px;color:var(--muted);font-size:15px}
+.price-feats{list-style:none;margin:24px 0 0;padding:0;text-align:left;display:grid;gap:10px;font-size:15px}
+.price-feats li{padding-left:26px;position:relative}
+.price-feats li::before{content:"✓";position:absolute;left:0;color:var(--gold2);font-weight:700}
+.price-note{margin-top:18px;font-size:13px;color:var(--muted)}
+</style>
+<section class="s" id="precios">
+  <div class="wrap">
+    <div class="center" style="max-width:60ch">
+      <div class="kicker">Precio simple</div>
+      <h2 style="margin-top:14px">Un precio claro, sin sorpresas.</h2>
+      <p class="lead center">Menos que las horas que tu equipo pierde por mes armando planillas.</p>
+    </div>
+    <div class="price-card reveal">
+      <div class="price-num">US$ 200<small> /mes</small></div>
+      <div class="price-extra">Incluye una obra · <b style="color:var(--text)">+ US$ 50</b> por cada obra adicional</div>
+      <ul class="price-feats">
+        <li><b>14 días gratis</b>, sin tarjeta — probás con tu obra real</li>
+        <li>Usuarios de tu equipo <b>ilimitados</b> (admin y solo lectura)</li>
+        <li>Lectura de facturas con IA, proyección de caja, cobros, stock y cronograma incluidos</li>
+        <li>Tus datos exportables siempre (Excel y PDF)</li>
+        <li>Cancelás cuando quieras, sin permanencia</li>
+      </ul>
+      <div class="hero-cta" style="justify-content:center;margin-top:26px">
+        <a class="btn btn-gold" href="https://app.gestian.com.ar" target="_blank" rel="noopener">Empezar prueba gratis →</a>
+        <a class="btn btn-ghost" href="#demo">Agendar demo</a>
+      </div>
+      <p class="price-note">Se cobra en pesos al dólar oficial del día, por débito automático con MercadoPago.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ (SEO + objeciones) -->
+<style>
+.faq-wrap{max-width:820px;margin:38px auto 0}
+.faq details{border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.025);margin-bottom:12px;overflow:hidden}
+.faq summary{list-style:none;cursor:pointer;padding:20px 24px;font-family:var(--head);font-weight:700;font-size:18px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--gold2);font-size:26px;font-weight:400;line-height:1;transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq .a{padding:0 24px 22px;color:var(--muted);font-size:16px;line-height:1.65}
+.faq .a b{color:var(--text)}
+</style>
+<section class="s" id="faq">
+  <div class="wrap">
+    <div class="center" style="max-width:60ch">
+      <div class="kicker">Preguntas frecuentes</div>
+      <h2 style="margin-top:14px">Lo que todo desarrollador pregunta antes de probarlo.</h2>
+    </div>
+    <div class="faq faq-wrap">
+      <details open>
+        <summary>¿Qué es Gestian exactamente?</summary>
+        <div class="a">Es un <b>software de gestión de obra</b> para desarrolladores y constructoras: el centro de comando de tu obra. Reúne los gastos, la obra física y las ventas de cada edificio en una sola pantalla. Cargás un gasto sacándole una <b>foto a la factura</b> (la IA la lee), ves el avance real, el mapa de unidades y los cobros — todo junto.</div>
+      </details>
+      <details>
+        <summary>¿Para quién es?</summary>
+        <div class="a">Para el <b>desarrollador o constructora que levanta el edificio Y vende las unidades</b>, y que maneja una o varias obras a la vez. Si hoy controlás todo con <b>Excel, papelitos y mensajes de WhatsApp</b>, Gestian es para vos. No es para inmobiliarias que solo alquilan.</div>
+      </details>
+      <details>
+        <summary>¿En qué se diferencia de un Excel o de un ERP tradicional?</summary>
+        <div class="a">Del Excel y el WhatsApp: <b>se calcula solo y está siempre al día</b>, no envejece ni se pierde una factura. De un ERP pesado: es <b>simple y rápido de adoptar</b> — no necesitás un equipo de seis personas ni una implementación de meses. Y cargás un gasto con una <b>foto</b>: la IA lee la factura por vos.</div>
+      </details>
+      <details>
+        <summary>¿Cómo cargo los gastos?</summary>
+        <div class="a">Le sacás una <b>foto a la factura o al comprobante</b> y la IA detecta proveedor, monto, rubro y fecha. Queda cargado en segundos, buscable y descargable. Se terminó tipear factura por factura y perseguir comprobantes por WhatsApp.</div>
+      </details>
+      <details>
+        <summary>¿Tengo que instalar algo?</summary>
+        <div class="a">No. Gestian es una <b>aplicación web (PWA)</b>: se usa desde el navegador de la computadora o del celular, y funciona como una app. No instalás programas ni servidores.</div>
+      </details>
+      <details>
+        <summary>¿Mis datos están seguros?</summary>
+        <div class="a">Sí. Corre en <b>infraestructura segura en la nube</b>, cada empresa ve únicamente sus propios datos, y podés <b>exportar todo a PDF o Excel</b> cuando quieras. Tus datos son tuyos.</div>
+      </details>
+      <details>
+        <summary>¿Cuánto cuesta?</summary>
+        <div class="a"><b>US$ 200 por mes</b> con una obra incluida, más US$ 50 por cada obra adicional — así escala con tu negocio. Se cobra en pesos al dólar oficial del día, con débito automático por MercadoPago, y podés cancelar cuando quieras. Antes de pagar nada tenés <b>14 días gratis, sin tarjeta</b>. <a href="#precios" style="color:var(--gold2)">Ver el detalle</a>.</div>
+      </details>
+      <details>
+        <summary>¿Cómo empiezo?</summary>
+        <div class="a">Entrás a <a href="https://app.gestian.com.ar" target="_blank" rel="noopener" style="color:var(--gold2)"><b>app.gestian.com.ar</b></a>, creás tu cuenta y ya estás adentro con <b>14 días gratis</b> — podés importar tu Excel de gastos en un par de clics. Y si preferís que te acompañemos, <a href="#demo" style="color:var(--gold2)">agendá una demo de 15 minutos</a>: te lo mostramos con una obra real y te ayudamos a migrar tus datos.</div>
+      </details>
+    </div>
+    <div class="center" style="margin-top:34px">
+      <a class="btn btn-gold" href="https://app.gestian.com.ar" target="_blank" rel="noopener">Probar gratis 14 días →</a>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type":"Question","name":"¿Qué es Gestian?","acceptedAnswer":{"@type":"Answer","text":"Es un software de gestión de obra para desarrolladores y constructoras: reúne los gastos, la obra física y las ventas de cada edificio en una sola pantalla, con carga de gastos por foto (lectura de facturas con IA), avance real, unidades y cobros."}},
+    {"@type":"Question","name":"¿Para quién es Gestian?","acceptedAnswer":{"@type":"Answer","text":"Para el desarrollador o constructora que construye y vende las unidades de su edificio y maneja una o varias obras, hoy con Excel, papelitos y mensajes de WhatsApp."}},
+    {"@type":"Question","name":"¿En qué se diferencia de un Excel o de un ERP tradicional?","acceptedAnswer":{"@type":"Answer","text":"Se calcula solo y está siempre al día, no se pierde una factura, y es simple de adoptar (sin implementaciones de meses). Cargás un gasto con una foto y la IA lee la factura por vos."}},
+    {"@type":"Question","name":"¿Cómo cargo los gastos?","acceptedAnswer":{"@type":"Answer","text":"Le sacás una foto a la factura o al comprobante y la IA detecta proveedor, monto, rubro y fecha. Queda cargado en segundos, buscable y descargable."}},
+    {"@type":"Question","name":"¿Tengo que instalar algo?","acceptedAnswer":{"@type":"Answer","text":"No. Es una aplicación web (PWA): se usa desde el navegador de la computadora o del celular, sin instalar nada."}},
+    {"@type":"Question","name":"¿Mis datos están seguros?","acceptedAnswer":{"@type":"Answer","text":"Sí. Corre en infraestructura segura en la nube, cada empresa ve solo sus datos, y se puede exportar todo a PDF o Excel cuando se quiera."}},
+    {"@type":"Question","name":"¿Cuánto cuesta Gestian?","acceptedAnswer":{"@type":"Answer","text":"El plan se cobra por obra y se define en una demo según el caso, arrancando con una prueba sin compromiso."}},
+    {"@type":"Question","name":"¿Cómo empiezo?","acceptedAnswer":{"@type":"Answer","text":"Agendando una demo gratuita de 15 minutos para verlo funcionando con una obra real."}}
+  ]
+}
+</script>
+
+<!-- FINAL CTA + CAL.COM -->
+<section class="s final" id="demo">
+  <div class="bp"></div>
+  <div class="wrap">
+    <div class="kicker center">Empecemos</div>
+    <h2 style="margin-top:14px">¿Querés ver tu obra así de clara?</h2>
+    <p class="lead center">Creá tu cuenta y probalo gratis 14 días con tu obra real. O agendá una demo de 15 minutos y te lo mostramos nosotros.</p>
+    <div class="hero-cta" style="justify-content:center;margin-top:22px">
+      <a class="btn btn-gold" href="https://app.gestian.com.ar" target="_blank" rel="noopener">Crear mi cuenta gratis →</a>
+    </div>
+    <p class="center" style="margin-top:10px;font-size:14px;color:var(--muted)">Sin tarjeta · sin compromiso · respondemos el mismo día</p>
+
+    <div class="cal-box">
+      <!-- Cal.com embed: se activa cuando pongas tu usuario en CAL_USERNAME (abajo). Mientras tanto, se muestra el botón. -->
+      <div id="cal-inline"></div>
+      <div class="cal-fallback" id="calFallback">
+        <p>Reservá tu horario para la demo:</p>
+        <a class="btn btn-gold" id="calLinkBtn" href="#" target="_blank" rel="noopener">Agendar demo en Cal.com →</a>
+        <p style="margin-top:16px;font-size:13px">o escribinos por WhatsApp: <a href="https://wa.me/5492233461849" target="_blank" rel="noopener" style="color:var(--gold2)">+54 9 223 346-1849</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY CTA (solo mobile) -->
+<div class="sticky-cta">
+  <span>14 días gratis · sin tarjeta</span>
+  <a class="btn btn-gold" href="https://app.gestian.com.ar" target="_blank" rel="noopener">Probar gratis →</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#top"><img src="assets/logo.png" alt="Gestian" style="height:30px"> Gestian</a>
+      <div style="margin-top:8px"><small>El centro de comando de tu obra.</small></div>
+    </div>
+    <div>
+      <a href="https://app.gestian.com.ar" target="_blank" rel="noopener">Ingresar a la app</a>
+      <a href="mailto:francisco@gestian.com.ar">Contacto</a>
+      <a href="#demo">Agendar demo</a>
+      <a href="https://app.gestian.com.ar/terminos.html" target="_blank" rel="noopener">Términos</a>
+      <a href="https://app.gestian.com.ar/privacidad.html" target="_blank" rel="noopener">Privacidad</a>
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:18px"><small>© <span id="yr"></span> Gestian · Hecho en Argentina.</small></div>
+</footer>
+
+<script>
+/* ============== CONFIG — PARA FRANCISCO ============== */
+const CAL_USERNAME = "gestian/demo";            // evento de Cal.com (cal.com/gestian/demo)
+const FORM_ENDPOINT = "/.netlify/functions/subscribe";   // función serverless que suscribe a MailerLite (la API key va en variables de entorno de Netlify, no acá)
+const CHECKLIST_FILE = "assets/checklist_gestian.pdf";
+/* Nota: los IDs de Google Analytics 4 y Meta Pixel se configuran arriba, en el <head>
+   (buscá "G-0VHN2HTG2N" y "TU_PIXEL_ID_AQUI"). */
+/* ==================================================== */
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* --- Reveal al hacer scroll (con failsafe para que nunca quede algo oculto) --- */
+(function(){
+  var els = document.querySelectorAll('.reveal');
+  function showAll(){ els.forEach(function(el){ el.classList.add('in'); }); }
+  if(!('IntersectionObserver' in window)){ showAll(); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {rootMargin:"0px 0px -8% 0px", threshold:0.08});
+  els.forEach(function(el){ io.observe(el); });
+  /* failsafe: si algo falla, a los 2s mostramos todo igual */
+  setTimeout(showAll, 2000);
+})();
+
+/* --- Skyline nocturno animado del hero (con grúa de obra) --- */
+(function(){
+  var NS='http://www.w3.org/2000/svg', GROUND=300;
+  var front=document.getElementById('hero-front'); if(!front) return;
+  function el(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  var stars=document.getElementById('hero-stars');
+  for(var i=0;i<40;i++){var s=el('circle',{cx:Math.random()*680,cy:Math.random()*190,r:Math.random()*1.1+0.3,fill:Math.random()<0.2?'#FCBA39':'#dfe2ff'});s.style.opacity=Math.random()*0.55+0.2;s.style.animation='skstar '+(2+Math.random()*4)+'s ease-in-out infinite';s.style.animationDelay=(Math.random()*5)+'s';stars.appendChild(s);}
+  function building(g,x,w,h,fill,edge,winChance,winLit,roof){
+    var y=GROUND-h; g.appendChild(el('rect',{x:x,y:y,width:w,height:h,fill:fill}));
+    if(edge){var ln=el('rect',{x:x,y:y,width:1.4,height:h,fill:'#FCBA39'});ln.style.opacity=.2;g.appendChild(ln);}
+    if(roof){var rw=w*0.5;g.appendChild(el('rect',{x:x+(w-rw)/2,y:y-9,width:rw,height:9,fill:fill}));}
+    if(winChance>0){var cw=14,ch=10,gx=10,gy=8,cols=Math.floor((w-gx)/(cw+6)),sx=x+(w-(cols*(cw+6)-6))/2;
+      for(var ry=y+14;ry<GROUND-10;ry+=ch+gy){for(var c=0;c<cols;c++){if(Math.random()>winChance)continue;
+        var wx=sx+c*(cw+6),lit=Math.random()<winLit,o=lit?(0.42+Math.random()*0.28):(0.05+Math.random()*0.07);
+        var rect=el('rect',{x:wx,y:ry,width:cw,height:ch,rx:1,fill:lit?'#FCBA39':'#9a8cc4'});rect.style.opacity=o;
+        if(lit&&Math.random()<0.4){rect.style.setProperty('--o',o);rect.style.animation='skwin '+(3+Math.random()*4)+'s ease-in-out infinite';rect.style.animationDelay=(Math.random()*5)+'s';}
+        g.appendChild(rect);}}}
+  }
+  var far=document.getElementById('hero-far'),fx=-10;
+  while(fx<700){var w=28+Math.random()*40,h=50+Math.random()*70;building(far,fx,w,h,'#181133',false,0.2,0.3,0);fx+=w+Math.random()*14;}
+  var mid=document.getElementById('hero-mid'),mx=-20;
+  while(mx<710){var w=44+Math.random()*54,h=90+Math.random()*90;building(mid,mx,w,h,'#221643','#FCBA39',0.6,0.36,Math.random()<0.5?1:0);mx+=w+Math.random()*8;}
+  [{x:430,w:96,h:210},{x:534,w:120,h:188},{x:600,w:96,h:150},{x:362,w:74,h:170}].forEach(function(t){building(front,t.x,t.w,t.h,'#2a1b54','#FCBA39',0.78,0.42,1);});
+  /* grúa torre */
+  var crane=document.getElementById('hero-crane');
+  function cl(x1,y1,x2,y2){crane.appendChild(el('line',{x1:x1,y1:y1,x2:x2,y2:y2}));}
+  var mT=74,mB=GROUND,a=596,b=606;
+  cl(a,mT,a,mB); cl(b,mT,b,mB);
+  for(var yy=mT;yy<=mB-22;yy+=22){cl(a,yy,b,yy); cl(a,yy,b,yy+22); cl(b,yy,a,yy+22);}
+  crane.appendChild(el('polyline',{points:'595,74 601,50 607,74'}));
+  crane.appendChild(el('rect',{x:590,y:74,width:15,height:11,fill:'#2c1d57',stroke:'#FCBA39','stroke-width':1}));
+  cl(432,80,601,77); cl(462,90,598,90);
+  cl(470,79,470,90); cl(510,78,510,90); cl(550,78,550,90);
+  cl(470,90,510,78); cl(510,90,550,78); cl(550,90,590,78);
+  cl(601,77,660,80); cl(610,90,650,90);
+  crane.appendChild(el('rect',{x:645,y:80,width:17,height:17,fill:'#2c1d57',stroke:'#FCBA39','stroke-width':1}));
+  cl(601,50,434,79); cl(601,50,659,80);
+  var lt=el('circle',{cx:601,cy:49,r:2.6,fill:'#ff5b5b'}); lt.setAttribute('class','sk-cranelight'); crane.appendChild(lt);
+  var tg=el('g',{}); tg.setAttribute('class','sk-trolley');
+  tg.appendChild(el('rect',{x:516,y:86,width:13,height:6,fill:'#FCBA39'}));
+  var lg=el('g',{}); lg.setAttribute('class','sk-load');
+  lg.appendChild(el('line',{x1:522,y1:92,x2:522,y2:196}));
+  lg.appendChild(el('line',{x1:513,y1:208,x2:522,y2:196}));
+  lg.appendChild(el('line',{x1:531,y1:208,x2:522,y2:196}));
+  lg.appendChild(el('rect',{x:510,y:206,width:24,height:13,fill:'#3a2768',stroke:'#FCBA39','stroke-width':1}));
+  tg.appendChild(lg); crane.appendChild(tg);
+})();
+
+/* --- Partículas del fondo global --- */
+(function(){
+  var bg=document.querySelector('.site-bg'); if(!bg) return;
+  for(var i=0;i<14;i++){var d=document.createElement('div');d.className='site-dot';
+    d.style.left=(Math.random()*100)+'%'; d.style.top=(Math.random()*100)+'%';
+    d.style.animationDuration=(7+Math.random()*8)+'s'; d.style.animationDelay=(Math.random()*8)+'s';
+    if(Math.random()<0.5) d.style.background='#A78BFA';
+    bg.appendChild(d);}
+})();
+
+/* --- Motivos técnicos con parallax al deslizar --- */
+(function(){
+  var layer=document.getElementById('bgPar'); if(!layer) return;
+  if(window.matchMedia('(max-width:1240px)').matches) return;
+  var S='class="tm-stroke"';
+  var motifs=[
+    '<svg width="156" height="40"><line '+S+' x1="6" y1="20" x2="150" y2="20"/><line '+S+' x1="6" y1="11" x2="6" y2="29"/><line '+S+' x1="150" y1="11" x2="150" y2="29"/><path '+S+' d="M6,20 L17,14 M6,20 L17,26"/><path '+S+' d="M150,20 L139,14 M150,20 L139,26"/></svg>',
+    '<svg width="120" height="124"><g class="tm-dim"><polygon '+S+' points="60,8 110,36 60,64 10,36"/><line '+S+' x1="10" y1="36" x2="10" y2="92"/><line '+S+' x1="60" y1="64" x2="60" y2="120"/><line '+S+' x1="110" y1="36" x2="110" y2="92"/><polyline '+S+' points="10,92 60,120 110,92"/></g></svg>',
+    '<svg width="120" height="120"><g class="tm-spin" style="transform-origin:60px 60px"><circle '+S+' cx="60" cy="60" r="50"/><circle '+S+' cx="60" cy="60" r="30"/><line '+S+' x1="60" y1="4" x2="60" y2="20"/><line '+S+' x1="60" y1="100" x2="60" y2="116"/><line '+S+' x1="4" y1="60" x2="20" y2="60"/><line '+S+' x1="100" y1="60" x2="116" y2="60"/></g><circle '+S+' cx="60" cy="60" r="3"/></svg>',
+    '<svg width="78" height="104" class="tm-dim"><polyline '+S+' points="14,8 64,8"/><polyline '+S+' points="14,96 64,96"/><line '+S+' x1="39" y1="8" x2="39" y2="96"/><line '+S+' x1="14" y1="8" x2="14" y2="20"/><line '+S+' x1="64" y1="8" x2="64" y2="20"/><line '+S+' x1="14" y1="96" x2="14" y2="84"/><line '+S+' x1="64" y1="96" x2="64" y2="84"/></svg>',
+    '<svg width="120" height="78" class="tm-pulse"><line '+S+' x1="8" y1="70" x2="116" y2="70"/><rect '+S+' x="18" y="44" width="14" height="26"/><rect '+S+' x="42" y="30" width="14" height="40"/><rect '+S+' x="66" y="18" width="14" height="52"/><rect '+S+' x="90" y="38" width="14" height="32"/></svg>',
+    '<svg width="120" height="120"><g class="tm-spin" style="transform-origin:60px 60px"><polygon '+S+' points="60,10 104,35 104,85 60,110 16,85 16,35"/><polygon '+S+' points="60,32 84,46 84,74 60,88 36,74 36,46"/></g></svg>'
+  ];
+  var hero=document.querySelector('.hero');
+  var startY=(hero?hero.offsetHeight:680)+60;
+  function docH(){return document.body.scrollHeight;}
+  layer.style.height=docH()+'px';
+  var zone=Math.max(docH()-startY-260,400), n=motifs.length, items=[];
+  for(var i=0;i<n;i++){
+    var w=document.createElement('div'); w.className='tech-motif'; w.innerHTML=motifs[i];
+    w.style.top=(startY+zone*((i+0.5)/n))+'px';
+    if(i%2===0) w.style.left=(1+Math.random()*2)+'%'; else w.style.right=(1.5+Math.random()*2)+'%';
+    var depth=0.10+(i%3)*0.07; w.setAttribute('data-d',depth.toFixed(2));
+    layer.appendChild(w); items.push(w);
+  }
+  var ticking=false;
+  function upd(){var sy=window.scrollY||window.pageYOffset;for(var i=0;i<items.length;i++){var d=parseFloat(items[i].getAttribute('data-d'));items[i].style.transform='translateY('+(-(sy*d)).toFixed(1)+'px)';}ticking=false;}
+  window.addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(upd);}},{passive:true});
+  window.addEventListener('resize',function(){layer.style.height=docH()+'px';},{passive:true});
+  upd();
+})();
+
+/* --- Obra que se construye al scrollear (fondo dinámico) --- */
+(function(){
+  var NS='http://www.w3.org/2000/svg';
+  var build=document.getElementById('bzBuild'), crane=document.getElementById('bzCrane'),
+      ghost=document.getElementById('bzGhost'), prog=document.getElementById('bzProg');
+  if(!build) return;
+  function E(t,a){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);return e;}
+  var GY=740, BX=470, BW=170, N=14, FH=42, cols=4, topY=GY-N*FH;
+  ghost.appendChild(E('rect',{x:BX,y:topY,width:BW,height:N*FH,fill:'none',stroke:'#F4B53A','stroke-width':1,opacity:.09}));
+  for(var f=1;f<N;f++) ghost.appendChild(E('line',{x1:BX,y1:GY-f*FH,x2:BX+BW,y2:GY-f*FH,stroke:'#F4B53A','stroke-width':1,opacity:.05}));
+  var floors=[];
+  for(var i=0;i<N;i++){
+    var g=E('g',{}), yt=GY-(i+1)*FH;
+    g.appendChild(E('line',{x1:BX,y1:yt,x2:BX+BW,y2:yt,'class':'bz-cl'}));
+    [0,1,2,3].forEach(function(c){var x=BX+c*(BW/3);g.appendChild(E('line',{x1:x,y1:yt,x2:x,y2:yt+FH,'class':'bz-cl'}));});
+    var wins=[];
+    for(var c2=0;c2<cols-1;c2++){var wx=BX+c2*(BW/3)+9;var w=E('rect',{x:wx,y:yt+10,width:(BW/3)-18,height:FH-20,rx:1,fill:'#FCBA39'});w.style.opacity=0;g.appendChild(w);wins.push(w);}
+    g.style.opacity=0; build.appendChild(g); floors.push({g:g,wins:wins});
+  }
+  var mTop=96, mX=648;
+  function CL(x1,y1,x2,y2){crane.appendChild(E('line',{x1:x1,y1:y1,x2:x2,y2:y2,'class':'bz-cl'}));}
+  CL(mX,mTop,mX,GY); CL(mX+11,mTop,mX+11,GY);
+  for(var yy=mTop;yy<=GY-26;yy+=26){CL(mX,yy,mX+11,yy);CL(mX,yy,mX+11,yy+26);CL(mX+11,yy,mX,yy+26);}
+  var ax=mX+5, ay=66;
+  crane.appendChild(E('polyline',{points:(mX-1)+',96 '+ax+','+ay+' '+(mX+12)+',96','class':'bz-cl'}));
+  CL(458,80,ax,ay); CL(458,80,mX+5,80);
+  CL(ax,ay,694,86); CL(mX+5,80,692,86);
+  crane.appendChild(E('rect',{x:682,y:86,width:16,height:15,'class':'bz-cl'}));
+  crane.appendChild(E('circle',{cx:ax,cy:ay-2,r:2.6,fill:'#ff5b5b','class':'bz-blink'}));
+  var hookG=E('g',{}), tx=520;
+  hookG.appendChild(E('rect',{x:tx-7,y:78,width:14,height:6,fill:'#FCBA39'}));
+  hookG.appendChild(E('line',{x1:tx,y1:84,x2:tx,y2:150,'class':'bz-cl'}));
+  hookG.appendChild(E('rect',{x:tx-13,y:150,width:26,height:13,fill:'#3a2768',stroke:'#FCBA39','stroke-width':1}));
+  crane.appendChild(hookG);
+  function render(p){
+    p=Math.max(0,Math.min(1,p));var built=p*N;
+    for(var i=0;i<N;i++){
+      var fp=Math.max(0,Math.min(1,built-i));
+      floors[i].g.style.opacity=fp; floors[i].g.style.transform='translateY('+((1-fp)*-16).toFixed(1)+'px)';
+      var lit=Math.max(0,Math.min(1,(built-i-0.4)/0.6));
+      floors[i].wins.forEach(function(w,j){w.style.opacity=(lit*(0.5+0.35*(j%2))).toFixed(2);});
+    }
+    hookG.style.transform='translateY('+((GY-built*FH)-163).toFixed(1)+'px)';
+    if(prog) prog.textContent='Obra '+Math.round(p*100)+'%';
+  }
+  function hb(){var h=document.querySelector('.hero');return h?h.offsetHeight*0.55:400;}
+  var ticking=false;
+  function onScroll(){
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(function(){
+      var sy=window.scrollY||window.pageYOffset;
+      var max=Math.max(1,document.body.scrollHeight-window.innerHeight);
+      var base=hb();
+      render((sy-base)/(max-base));
+      if(prog){ if(sy>base*1.1) prog.classList.add('show'); else prog.classList.remove('show'); }
+      ticking=false;
+    });
+  }
+  if(window.matchMedia('(prefers-reduced-motion:reduce)').matches){ build.style.opacity=1; render(1); }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  window.addEventListener('resize',onScroll,{passive:true});
+  onScroll();
+})();
+
+/* helper único para disparar eventos en GA4 y Meta Pixel a la vez.
+   Los CTA de demo y el form del lead magnet cuentan como conversión 'Lead' en Meta. */
+function track(eventName, params){
+  params=params||{};
+  try{ if(window.gtag) gtag('event', eventName, params); }catch(e){}
+  try{
+    if(window.fbq){
+      var fbEvent = (eventName==='AgendarDemo' || eventName==='DescargaChecklist') ? 'Lead' : eventName;
+      fbq('track', fbEvent, params);
+    }
+  }catch(e){}
+}
+
+/* eventos en los CTA de demo (cualquier link al #demo, el botón de Cal y el de WhatsApp) */
+document.querySelectorAll('a[href="#demo"], #calLinkBtn, a[href^="https://wa.me"]').forEach(function(el){
+  el.addEventListener('click', function(){ track('AgendarDemo', {ubicacion: el.id || el.textContent.trim().slice(0,30)}); });
+});
+
+/* --- Cal.com embed (solo si configuraste CAL_USERNAME) --- */
+(function(){
+  const link = CAL_USERNAME || "tu-usuario/demo";
+  document.getElementById('calLinkBtn').href = "https://cal.com/" + link;
+  if(CAL_USERNAME){
+    document.getElementById('calFallback').style.display='none';
+    /* snippet oficial de Cal.com */
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("inline", { elementOrSelector: "#cal-inline", calLink: CAL_USERNAME, layout: "month_view",
+      config: {theme:"dark"} });
+    Cal("ui", { theme:"dark", styles:{branding:{brandColor:"#F59E0B"}}, hideEventTypeDetails:false });
+  }
+})();
+
+/* --- Lead magnet: captura email + descarga checklist --- */
+document.getElementById('lmForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const email = document.getElementById('lmEmail').value.trim();
+  const msg = document.getElementById('lmMsg');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ msg.style.color="#E07B77"; msg.textContent="Poné un email válido."; return; }
+  msg.style.color="#9aa0c4"; msg.textContent="Enviando…";
+  try{
+    if(FORM_ENDPOINT){
+      await fetch(FORM_ENDPOINT, {method:"POST", headers:{'Accept':'application/json','Content-Type':'application/json'},
+        body: JSON.stringify({email:email, fuente:"landing-checklist"})});
+    }
+  }catch(err){ /* seguimos igual: lo importante es entregar el checklist */ }
+  msg.style.color="#34D399"; msg.textContent="¡Listo! Te enviamos el checklist a tu mail. Revisá tu casilla (y la carpeta de Promociones o Spam).";
+  track('DescargaChecklist', {email_dominio: (email.split('@')[1]||'')});
+  document.getElementById('lmEmail').value="";
+});
+</script>
+</body>
+</html>
