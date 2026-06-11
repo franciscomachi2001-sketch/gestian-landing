@@ -1,4 +1,20 @@
-# Landing Gestian — cómo ponerla online
+# Landing Gestian — estado y cómo actualizarla
+
+> **ESTADO (2026-06-10): YA ESTÁ ONLINE en https://gestian.com.ar vía GitHub Pages**
+> (repo público `franciscomachi2001-sketch/gestian-landing`; el DNS vive en Netlify).
+>
+> **Para publicar un cambio:** editá los archivos de esta carpeta y corré
+> ```bash
+> cd "/Users/francisco/Claude/Projects/GESTIAN/05_Web/landing"
+> git add -A && git commit -m "qué cambié" && git push
+> ```
+> GitHub Pages lo publica solo en ~1 minuto. (Lo de "arrastrar a Netlify" de abajo quedó obsoleto.)
+>
+> Config actual: GA4 real (G-0VHN2HTG2N) · Cal.com `gestian/demo` activo ·
+> `FORM_ENDPOINT` vacío (modo respaldo: el checklist se descarga pero no guarda
+> el email — reconectar con Formspree si se quiere capturar leads) ·
+> Meta Pixel sigue placeholder (configurar el día que corras ads).
+
 
 Carpeta lista para publicar. Es un sitio estático (1 archivo HTML + carpeta `assets`). No necesita servidor ni base de datos.
 
